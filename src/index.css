@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+/* ===== Custom Theme ===== */
+@theme {
+  --color-dark-bg: #0a0a0a;
+  --color-dark-card: #111111;
+  --color-dark-surface: #1a1a2e;
+  --color-neon-purple: #a855f7;
+  --color-neon-blue: #3b82f6;
+  --color-neon-cyan: #06b6d4;
+  --color-neon-pink: #ec4899;
+  --color-glass: rgba(255, 255, 255, 0.05);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+  --font-poppins: "Poppins", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+html, body, #root {
+  width: 100%;
+}
+
+/* ===== Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter);
+  background-color: #0a0a0a;
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #a855f7, #3b82f6);
+  border-radius: 4px;
+}
+
+/* ===== Particle Canvas ===== */
+#particles-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ===== Glow Button ===== */
+.glow-btn {
+  position: relative;
+  padding: 14px 40px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-family: var(--font-poppins);
+  color: #fff;
+  background: linear-gradient(135deg, #a855f7, #3b82f6);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  letter-spacing: 0.5px;
+}
+
+.glow-btn::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  background: linear-gradient(135deg, #a855f7, #3b82f6, #06b6d4);
+  border-radius: 14px;
+  z-index: -1;
+  opacity: 0;
+  filter: blur(12px);
+  transition: opacity 0.4s ease;
+}
+
+.glow-btn:hover::before {
+  opacity: 1;
+}
+
+.glow-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.5), 0 0 60px rgba(59, 130, 246, 0.3);
+}
+
+/* ===== Glass Card ===== */
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  transition: all 0.4s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(168, 85, 247, 0.3);
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.1), 0 0 60px rgba(59, 130, 246, 0.05);
+  transform: translateY(-4px);
+}
+
+/* ===== Section Heading ===== */
+.section-heading {
+  font-family: var(--font-poppins);
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(135deg, #a855f7, #3b82f6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .section-heading {
+    font-size: 1.8rem;
+  }
+}
+
+/* ===== Loader ===== */
+.loader-container {
+  position: fixed;
+  inset: 0;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loader-ring {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #a855f7;
+  border-right-color: #3b82f6;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== Gradient Orbs (Hero BG) ===== */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.orb-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #a855f7, transparent);
+  top: -150px;
+  left: -100px;
+}
+
+.orb-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #3b82f6, transparent);
+  bottom: -100px;
+  right: -80px;
+}
+
+.orb-3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #06b6d4, transparent);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
