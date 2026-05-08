@@ -12,8 +12,7 @@ import CTA from './components/CTA.jsx'
 import Footer from './components/Footer.jsx'
 import ParticleBackground from './components/ParticleBackground.jsx'
 
-// ✅ Replace this with your actual Google Form URL
-export const GOOGLE_FORM_URL = 'https://forms.gle/YOUR_FORM_ID_HERE'
+export const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeJOG14Wuvt-dzLNr0L5zxyjFR5Ju5sqpWqCOYTIQwvx2lqzg/viewform?usp=header'
 
 function App() {
   const [loading, setLoading] = useState(true)
