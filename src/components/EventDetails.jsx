@@ -36,9 +36,9 @@ export default function EventDetails() {
   return (
     <section
   id="details"
-  className="relative pt-20 pb-32 sm:pt-28 sm:pb-40 px-4 sm:px-6 overflow-hidden"
+  className="relative mt-16 sm:mt-24 pt-20 pb-32 sm:pt-28 sm:pb-40 px-4 sm:px-6 overflow-hidden"
 >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto space-y-12 sm:space-y-16">
 
         {/* Heading */}
         <ScrollReveal>
@@ -54,8 +54,7 @@ export default function EventDetails() {
         </ScrollReveal>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 sm:gap-6 max-w-6xl mx-auto">
-
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 sm:gap-6 max-w-6xl mx-auto mb-6 sm:mb-10">
           {details.map((item, i) => (
             <ScrollReveal key={i} delay={i * 0.1}>
               <motion.div
