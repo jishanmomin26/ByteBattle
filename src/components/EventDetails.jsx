@@ -35,10 +35,11 @@ const details = [
 export default function EventDetails() {
   return (
     <section
-  id="details"
-  className="relative mt-20 mb-20 sm:mt-28 sm:mb-28 py-20 sm:py-28 px-4 sm:px-6 overflow-hidden"
->
-      <div className="max-w-7xl mx-auto space-y-12 sm:space-y-16">
+      id="details"
+      className="relative py-20 sm:py-28"
+    >
+      {/* Outer spacing fix */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
 
         {/* Heading */}
         <ScrollReveal>
@@ -53,100 +54,74 @@ export default function EventDetails() {
           </div>
         </ScrollReveal>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 sm:gap-6 max-w-6xl mx-auto mb-6 sm:mb-10">
-          {details.map((item, i) => (
-            <ScrollReveal key={i} delay={i * 0.1}>
-              <motion.div
-                whileHover={{
-                  y: -6,
-                  scale: 1.02,
-                }}
-                transition={{
-                  type: 'spring',
-                  stiffness: 250,
-                }}
-                className="
-                  glass-card
-                  relative
-                  overflow-hidden
-                  rounded-3xl
-                  border border-white/10
-                  p-6 sm:p-7
-                  text-center
-                  h-full
-                  group
-                "
-              >
+        {/* Cards Container */}
+        <div className="max-w-6xl mx-auto">
 
-                {/* Top Glow */}
-                <div
-                  className={`absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r ${item.gradient}`}
-                />
+          <div className="
+            grid
+            grid-cols-1
+            sm:grid-cols-2
+            lg:grid-cols-4
+            gap-4 sm:gap-6
+          ">
 
-                {/* Icon */}
-                <div className="flex justify-center mb-4">
-                  <div
-                    className={`
-                      w-16 h-16
+            {details.map((item, i) => (
+              <ScrollReveal key={i} delay={i * 0.1}>
+                <motion.div
+                  whileHover={{ y: -6, scale: 1.02 }}
+                  transition={{ type: 'spring', stiffness: 250 }}
+                  className="
+                    glass-card
+                    rounded-3xl
+                    border border-white/10
+                    p-5 sm:p-6
+                    text-center
+                    h-full
+                    group
+                  "
+                >
+
+                  {/* Icon */}
+                  <div className="flex justify-center mb-4">
+                    <div className={`
+                      w-14 h-14 sm:w-16 sm:h-16
                       rounded-2xl
                       flex items-center justify-center
-                      text-3xl
+                      text-2xl sm:text-3xl
                       bg-gradient-to-br ${item.gradient}
                       shadow-lg
+                    `}>
+                      {item.icon}
+                    </div>
+                  </div>
+
+                  {/* Title */}
+                  <p className="text-[10px] sm:text-xs text-gray-500 uppercase tracking-[0.25em] mb-2">
+                    {item.title}
+                  </p>
+
+                  {/* Value */}
+                  <h3
+                    className={`
+                      text-xl sm:text-2xl
+                      font-bold
+                      bg-gradient-to-r ${item.gradient}
+                      bg-clip-text text-transparent
                     `}
                   >
-                    <span className="drop-shadow-lg">
-                      {item.icon}
-                    </span>
-                  </div>
-                </div>
+                    {item.value}
+                  </h3>
 
-                {/* Title */}
-                <p className="text-[11px] sm:text-xs text-gray-500 uppercase tracking-[0.25em] mb-3">
-                  {item.title}
-                </p>
+                  {/* Subtitle */}
+                  <p className="text-xs sm:text-sm text-gray-400 mt-2">
+                    {item.sub}
+                  </p>
 
-                {/* Main Value */}
-                <h3
-                  className={`
-                    text-2xl sm:text-3xl
-                    font-bold
-                    bg-gradient-to-r ${item.gradient}
-                    bg-clip-text
-                    text-transparent
-                    leading-tight
-                  `}
-                  style={{
-                    fontFamily: 'var(--font-poppins)',
-                  }}
-                >
-                  {item.value}
-                </h3>
+                </motion.div>
+              </ScrollReveal>
+            ))}
 
-                {/* Subtitle */}
-                <p className="text-sm text-gray-400 mt-3 leading-relaxed">
-                  {item.sub}
-                </p>
-
-                {/* Hover Glow */}
-                <div
-                  className={`
-                    absolute bottom-0 left-1/2
-                    -translate-x-1/2
-                    h-[3px]
-                    w-0
-                    group-hover:w-3/4
-                    bg-gradient-to-r ${item.gradient}
-                    rounded-full
-                    transition-all duration-500
-                  `}
-                />
-
-              </motion.div>
-            </ScrollReveal>
-          ))}
-
+          </div>
         </div>
       </div>
     </section>
