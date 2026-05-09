@@ -32,7 +32,9 @@ const details = [
   },
 ]
 
-<section
+export default function EventDetails() {
+  return (
+    <section
   id="details"
   className="relative pt-20 pb-32 sm:pt-28 sm:pb-40 px-4 sm:px-6 overflow-hidden"
 >
