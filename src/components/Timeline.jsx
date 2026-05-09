@@ -17,7 +17,7 @@ const steps = [
     active: false,
   },
   {
-    date: '29 May 2026',
+    date: '26 May 2026',
     title: 'Problem Statement Revealed',
     description: 'Theme and problem statement shared with all participants.',
     icon: '📋',
