@@ -36,7 +36,7 @@ export default function EventDetails() {
   return (
     <section
   id="details"
-  className="relative mt-16 sm:mt-24 pt-20 pb-32 sm:pt-28 sm:pb-40 px-4 sm:px-6 overflow-hidden"
+  className="relative mt-20 mb-20 sm:mt-28 sm:mb-28 py-20 sm:py-28 px-4 sm:px-6 overflow-hidden"
 >
       <div className="max-w-7xl mx-auto space-y-12 sm:space-y-16">
 
