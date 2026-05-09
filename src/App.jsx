@@ -72,6 +72,7 @@ function App() {
   <Rewards />
   <WhyJoin />
   <FAQ />
+          </CTA>
 </div>
           {/* Footer */}
           <Footer />
