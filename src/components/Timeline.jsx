@@ -35,9 +35,9 @@ const steps = [
 export default function Timeline() {
   return (
     <section
-      id="timeline"
-      className="relative py-20 sm:py-28 px-4 sm:px-6 overflow-hidden"
-    >
+  id="timeline"
+  className="relative mt-20 sm:mt-28 py-20 sm:py-28 px-4 sm:px-6 overflow-hidden"
+>
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <ScrollReveal>
