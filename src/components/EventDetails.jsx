@@ -32,12 +32,10 @@ const details = [
   },
 ]
 
-export default function EventDetails() {
-  return (
-    <section
-      id="details"
-      className="relative py-20 sm:py-28 px-4 sm:px-6 overflow-hidden"
-    >
+<section
+  id="details"
+  className="relative pt-20 pb-32 sm:pt-28 sm:pb-40 px-4 sm:px-6 overflow-hidden"
+>
       <div className="max-w-7xl mx-auto">
 
         {/* Heading */}
