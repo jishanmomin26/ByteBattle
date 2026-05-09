@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import ScrollReveal from './ScrollReveal.jsx'
+{faqs.map((item, i) => (
+  <div key={i}>
 
 const faqs = [
   {
