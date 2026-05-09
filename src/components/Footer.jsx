@@ -4,28 +4,36 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="relative z-10 border-t border-white/5 mt-20 sm:mt-28">
-      <div className="max-w-7xl mx-auto px-6 pt-16 pb-10 sm:pt-20 sm:pb-12">
+    <footer className="relative z-10 mt-20 sm:mt-28 border-t border-white/5">
+
+      {/* Container */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-16 sm:pt-20 pb-10">
 
         <ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-10">
+          <div className="
+            grid
+            grid-cols-1
+            md:grid-cols-3
+            gap-10 sm:gap-12 md:gap-8
+          ">
 
             {/* Brand */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
+            <div className="space-y-4 text-center md:text-left">
+              <div className="flex items-center justify-center md:justify-start gap-2">
                 <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center font-bold text-white text-sm">
                   BB
                 </div>
                 <span className="text-xl font-bold">ByteBattle</span>
               </div>
 
-              <p className="text-sm text-gray-500 leading-relaxed max-w-xs">
-                A 15-hour online solo hackathon designed to encourage innovation, learning, and real-world problem-solving.
+              <p className="text-sm text-gray-500 leading-relaxed max-w-xs mx-auto md:mx-0">
+                A 15-hour online solo hackathon designed to encourage innovation,
+                learning, and real-world problem-solving.
               </p>
             </div>
 
             {/* Quick Links */}
-            <div className="space-y-4">
+            <div className="space-y-4 text-center md:text-left">
               <h4 className="text-sm font-semibold text-white uppercase tracking-wider">
                 Quick Links
               </h4>
@@ -55,40 +63,52 @@ export default function Footer() {
             </div>
 
             {/* Contact */}
-            <div className="space-y-4">
+            <div className="space-y-4 text-center md:text-left">
               <h4 className="text-sm font-semibold text-white uppercase tracking-wider">
                 Contact
               </h4>
 
-              <ul className="space-y-4">
-                <li className="flex items-center gap-3 text-sm text-gray-500">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-purple-400 flex-shrink-0">
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                  </svg>
-                  <a href="mailto:bytebattleadmin@gmail.com" className="hover:text-purple-400 transition-colors">
+              <div className="space-y-4 flex flex-col items-center md:items-start">
+
+                {/* Email */}
+                <div className="flex items-center gap-3 text-sm text-gray-400">
+                  <span className="text-purple-400">✉️</span>
+                  <a
+                    href="mailto:bytebattleadmin@gmail.com"
+                    className="hover:text-purple-400 transition-colors break-all"
+                  >
                     bytebattleadmin@gmail.com
                   </a>
-                </li>
+                </div>
 
-                <li className="flex items-center gap-3 text-sm text-gray-500">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-purple-400 flex-shrink-0">
-                    <rect x="2" y="2" width="20" height="20" rx="5" />
-                    <circle cx="12" cy="12" r="5" />
-                    <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" />
-                  </svg>
-                  <a href="https://instagram.com/ByteBattle.in" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors">
+                {/* Instagram */}
+                <div className="flex items-center gap-3 text-sm text-gray-400">
+                  <span className="text-purple-400">📷</span>
+                  <a
+                    href="https://instagram.com/ByteBattle.in"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-purple-400 transition-colors"
+                  >
                     @ByteBattle.in
                   </a>
-                </li>
-              </ul>
+                </div>
+
+              </div>
             </div>
 
           </div>
         </ScrollReveal>
 
-        {/* Divider */}
-        <div className="border-t border-white/5 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        {/* Bottom Bar */}
+        <div className="
+          border-t border-white/5
+          mt-12 pt-6
+          flex flex-col sm:flex-row
+          items-center justify-between
+          gap-3
+          text-center sm:text-left
+        ">
           <p className="text-xs text-gray-600">
             © {currentYear} ByteBattle. All rights reserved.
           </p>
