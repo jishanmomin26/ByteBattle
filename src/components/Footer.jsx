@@ -1,31 +1,36 @@
 import ScrollReveal from './ScrollReveal.jsx'
-import { GOOGLE_FORM_URL } from '../App.jsx'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="relative z-10 border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6 py-16">
+    <footer className="relative z-10 border-t border-white/5 mt-20 sm:mt-28">
+      <div className="max-w-7xl mx-auto px-6 pt-16 pb-10 sm:pt-20 sm:pb-12">
+
         <ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-10">
+
             {/* Brand */}
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center font-bold text-white text-sm" style={{ fontFamily: 'var(--font-poppins)' }}>
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center font-bold text-white text-sm">
                   BB
                 </div>
-                <span className="text-xl font-bold" style={{ fontFamily: 'var(--font-poppins)' }}>ByteBattle</span>
+                <span className="text-xl font-bold">ByteBattle</span>
               </div>
+
               <p className="text-sm text-gray-500 leading-relaxed max-w-xs">
                 A 15-hour online solo hackathon designed to encourage innovation, learning, and real-world problem-solving.
               </p>
             </div>
 
             {/* Quick Links */}
-            <div>
-              <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Quick Links</h4>
-              <ul className="space-y-2.5">
+            <div className="space-y-4">
+              <h4 className="text-sm font-semibold text-white uppercase tracking-wider">
+                Quick Links
+              </h4>
+
+              <ul className="space-y-3">
                 {[
                   { label: 'About', href: '#about' },
                   { label: 'Event Details', href: '#details' },
@@ -50,9 +55,12 @@ export default function Footer() {
             </div>
 
             {/* Contact */}
-            <div>
-              <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Contact Us</h4>
-              <ul className="space-y-3">
+            <div className="space-y-4">
+              <h4 className="text-sm font-semibold text-white uppercase tracking-wider">
+                Contact
+              </h4>
+
+              <ul className="space-y-4">
                 <li className="flex items-center gap-3 text-sm text-gray-500">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-purple-400 flex-shrink-0">
                     <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -62,6 +70,7 @@ export default function Footer() {
                     bytebattleadmin@gmail.com
                   </a>
                 </li>
+
                 <li className="flex items-center gap-3 text-sm text-gray-500">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-purple-400 flex-shrink-0">
                     <rect x="2" y="2" width="20" height="20" rx="5" />
@@ -73,29 +82,22 @@ export default function Footer() {
                   </a>
                 </li>
               </ul>
-
-              {/* Register CTA in footer */}
-              <a
-                href={GOOGLE_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glow-btn !text-sm !py-2.5 !px-6 inline-block mt-6"
-              >
-                Register Now
-              </a>
             </div>
+
           </div>
         </ScrollReveal>
 
         {/* Divider */}
-        <div className="border-t border-white/5 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="border-t border-white/5 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-gray-600">
             © {currentYear} ByteBattle. All rights reserved.
           </p>
+
           <p className="text-xs text-gray-700">
             Built with 💜 for the next generation of builders
           </p>
         </div>
+
       </div>
     </footer>
   )
