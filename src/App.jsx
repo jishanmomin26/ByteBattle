@@ -65,17 +65,14 @@ function App() {
           <Navbar />
 
           {/* Content */}
-          <main className="relative z-10">
-            <Hero />
-            <About />
-            <EventDetails />
-            <Timeline />
-            <Rewards />
-            <WhyJoin />
-            <FAQ />
-            <CTA />
-          </main>
-
+          <div className="flex flex-col gap-20 sm:gap-28">
+  <About />
+  <EventDetails />
+  <Timeline />
+  <Rewards />
+  <WhyJoin />
+  <FAQ />
+</div>
           {/* Footer */}
           <Footer />
         </motion.div>
