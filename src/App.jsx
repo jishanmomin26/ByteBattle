@@ -64,16 +64,21 @@ function App() {
           {/* Navbar */}
           <Navbar />
 
-          {/* Content */}
-          <div className="flex flex-col gap-20 sm:gap-28">
-  <About />
-  <EventDetails />
-  <Timeline />
-  <Rewards />
-  <WhyJoin />
-  <FAQ />
-          </CTA>
-</div>
+          <>
+  {/* HERO SECTION */}
+  <Hero />   {/* 👈 Ye missing tha */}
+
+  {/* REST SECTIONS */}
+  <div className="flex flex-col gap-20 sm:gap-28">
+    <About />
+    <EventDetails />
+    <Timeline />
+    <Rewards />
+    <WhyJoin />
+    <FAQ />
+  </div>
+</>
+          
           {/* Footer */}
           <Footer />
         </motion.div>
