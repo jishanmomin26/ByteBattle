@@ -8,7 +8,7 @@ const faqs = [
   },
   {
     q: 'Can beginners participate?',
-    a: 'Absolutely! This hackathon is designed to be beginner-friendly.',
+    a: 'Absolutely! This hackathon is beginner-friendly.',
   },
   {
     q: 'Is it a solo or team hackathon?',
@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     q: 'When will the problem statement be revealed?',
-    a: 'The problem statement will be revealed after registration closes.',
+    a: 'After registration closes.',
   },
   {
     q: 'How do I submit my project?',
@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: 'What technologies can I use?',
-    a: 'You are free to use any technology stack.',
+    a: 'You are free to use any tech stack.',
   },
 ]
 
