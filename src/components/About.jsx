@@ -5,10 +5,9 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative py-20 sm:py-28 overflow-hidden"
+      className="relative py-20 sm:py-28 px-4 sm:px-6"
     >
-      {/* Container */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="max-w-7xl mx-auto">
 
         {/* Heading */}
         <div className="max-w-3xl mx-auto text-center">
@@ -23,13 +22,24 @@ export default function About() {
           </ScrollReveal>
         </div>
 
-        {/* About Content */}
-        <div className="mt-10 sm:mt-14 max-w-5xl mx-auto">
+        {/* Content */}
+        <div className="mt-10 sm:mt-14">
           <ScrollReveal delay={0.2}>
-            <div className="glass-card p-5 sm:p-8 md:p-10">
 
-              {/* Text Content */}
-              <div className="space-y-5 text-gray-300 text-sm sm:text-base leading-7 sm:leading-8 text-center sm:text-left">
+            <div className="
+              glass-card
+              mx-auto
+              max-w-4xl
+              p-5 sm:p-8 md:p-10
+            ">
+
+              <div className="
+                space-y-5
+                text-gray-300
+                text-sm sm:text-base
+                leading-7 sm:leading-8
+                text-center sm:text-left
+              ">
 
                 <p>
                   <span className="text-white font-semibold">
@@ -63,7 +73,13 @@ export default function About() {
                 </p>
 
                 {/* Highlight Box */}
-                <div className="border border-purple-500/30 bg-purple-500/5 rounded-2xl p-4 sm:p-5">
+                <div className="
+                  mt-6
+                  border border-purple-500/30
+                  bg-purple-500/5
+                  rounded-2xl
+                  p-4 sm:p-5
+                ">
                   <p className="text-white font-medium text-center sm:text-left">
                     The goal of ByteBattle is not just to compete,
                     but to learn, build, and grow.
@@ -72,13 +88,20 @@ export default function About() {
 
               </div>
             </div>
+
           </ScrollReveal>
         </div>
 
         {/* Stats */}
-        <div className="mt-10 sm:mt-14 max-w-5xl mx-auto">
+        <div className="mt-10 sm:mt-14">
           <ScrollReveal delay={0.35}>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+
+            <div className="
+              grid grid-cols-1 sm:grid-cols-3
+              gap-4 sm:gap-6
+              max-w-4xl
+              mx-auto
+            ">
 
               {[
                 { num: '15', label: 'Hours' },
@@ -88,8 +111,11 @@ export default function About() {
                 <motion.div
                   key={i}
                   whileHover={{ scale: 1.03 }}
-                  transition={{ duration: 0.25 }}
-                  className="glass-card p-5 sm:p-6 text-center"
+                  className="
+                    glass-card
+                    p-5 sm:p-6
+                    text-center
+                  "
                 >
                   <h3 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
                     {stat.num}
@@ -102,6 +128,7 @@ export default function About() {
               ))}
 
             </div>
+
           </ScrollReveal>
         </div>
 
