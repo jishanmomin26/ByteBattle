@@ -5,7 +5,7 @@ import { useState } from 'react'
 const faqs = [
   {
     q: 'Is ByteBattle free to participate?',
-    a: 'Yes, ByteBattle is completely free for all participants.',
+    a: 'Yes, ByteBattle is completely free for all participants. ',
   },
   {
     q: 'Can beginners participate?',
