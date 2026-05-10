@@ -114,7 +114,7 @@ export default function Footer() {
           </p>
 
           <p className="text-xs text-gray-700">
-            Built with 💜 for the next generation of builders
+            Built with 💜 for the next generation of builders 
           </p>
         </div>
 
