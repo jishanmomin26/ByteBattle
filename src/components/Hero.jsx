@@ -39,6 +39,7 @@ function CountdownUnit({ value, label }) {
 
 export default function Hero() {
   const targetDate = new Date('2026-06-01T09:00:00')
+  const countdown = useCountdown(targetDate)
   
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
