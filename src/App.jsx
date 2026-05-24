@@ -82,7 +82,7 @@ function App() {
           {/* Footer */}
           <div className="flex flex-col gap-20 sm:gap-28">
           <Footer />
-        </motion.div>
+        </div>
       )}
     </>
   )
