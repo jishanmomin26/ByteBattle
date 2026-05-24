@@ -182,7 +182,7 @@ export default function EventDetails() {
 
         {/* ================= SPACING FIX ================= */}
 
-        <div className="mt-16 sm:mt-20" />
+        <div className="mt-16 sm:mt-20 xl:mt-24" />
 
         {/* ================= COMPETITION ROUNDS ================= */}
 
