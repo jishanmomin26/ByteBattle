@@ -182,12 +182,12 @@ export default function EventDetails() {
 
         {/* ================= SPACING FIX ================= */}
 
-        <div className="mt-16 sm:mt-20 xl:mt-24" />
+        <div className="h-16 sm:h-24 xl:h-28" />
 
         {/* ================= COMPETITION ROUNDS ================= */}
 
         <ScrollReveal>
-          <div className="text-center mb-10 sm:mb-12">
+          <div className="text-center pt-4 sm:pt-6 mb-10 sm:mb-12">
 
             <h3 className="
               text-4xl sm:text-5xl
