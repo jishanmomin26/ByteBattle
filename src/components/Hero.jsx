@@ -38,8 +38,8 @@ function CountdownUnit({ value, label }) {
 }
 
 export default function Hero() {
-  const countdown = useCountdown('2026-05-30T00:00:00')
-
+  const targetDate = new Date('2026-06-01T09:00:00')
+  
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Gradient orbs */}
@@ -56,7 +56,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8"
         >
           <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-          <span className="text-xs sm:text-sm text-gray-400">Registration Opening Soon — 10 May 2026</span>
+          <span className="text-xs sm:text-sm text-gray-400">Registration Ending on 27 May 2026</span>
         </motion.div>
 
         {/* Title */}
