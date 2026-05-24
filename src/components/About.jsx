@@ -22,23 +22,19 @@ export default function About() {
           </ScrollReveal>
         </div>
 
-        {/* Content */}
-        <div className="mt-10 sm:mt-14">
-          <ScrollReveal delay={0.2}>
+        {/* CONTENT GRID */}
+        <div className="mt-12 sm:mt-16 grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
-            <div className="
-              glass-card
-              mx-auto
-              max-w-4xl
-              p-5 sm:p-8 md:p-10
-            ">
+          {/* LEFT - TEXT */}
+          <ScrollReveal delay={0.2}>
+            <div className="glass-card p-6 sm:p-8 md:p-10">
 
               <div className="
                 space-y-5
                 text-gray-300
                 text-sm sm:text-base
                 leading-7 sm:leading-8
-                text-center sm:text-left
+                text-center lg:text-left
               ">
 
                 <p>
@@ -55,24 +51,21 @@ export default function About() {
                     beginner-friendly
                   </span>
                   , making it perfect for students who are just starting
-                  their journey in development, as well as those who want
-                  to improve their skills.
+                  their journey in development.
                 </p>
 
                 <p>
                   Participants will build projects individually within
-                  15 hours. The problem statement or theme will be
-                  revealed after registration ends to ensure fairness
-                  and creativity.
+                  15 hours. The problem statement will be revealed after
+                  registration ends to ensure fairness and creativity.
                 </p>
 
                 <p>
-                  Throughout the hackathon, guidance and support will
-                  be provided to help participants overcome challenges
-                  and successfully complete their projects.
+                  Guidance and support will be provided throughout the
+                  hackathon to help participants succeed.
                 </p>
 
-                {/* Highlight Box */}
+                {/* Highlight */}
                 <div className="
                   mt-6
                   border border-purple-500/30
@@ -80,7 +73,7 @@ export default function About() {
                   rounded-2xl
                   p-4 sm:p-5
                 ">
-                  <p className="text-white font-medium text-center sm:text-left">
+                  <p className="text-white font-medium text-center lg:text-left">
                     The goal of ByteBattle is not just to compete,
                     but to learn, build, and grow.
                   </p>
@@ -88,20 +81,11 @@ export default function About() {
 
               </div>
             </div>
-
           </ScrollReveal>
-        </div>
 
-        {/* Stats */}
-        <div className="mt-10 sm:mt-14">
-          <ScrollReveal delay={0.35}>
-
-            <div className="
-              grid grid-cols-1 sm:grid-cols-3
-              gap-4 sm:gap-6
-              max-w-4xl
-              mx-auto
-            ">
+          {/* RIGHT - STATS */}
+          <ScrollReveal delay={0.3}>
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4 sm:gap-6">
 
               {[
                 { num: '15', label: 'Hours' },
@@ -110,26 +94,22 @@ export default function About() {
               ].map((stat, i) => (
                 <motion.div
                   key={i}
-                  whileHover={{ scale: 1.03 }}
-                  className="
-                    glass-card
-                    p-5 sm:p-6
-                    text-center
-                  "
+                  whileHover={{ scale: 1.05 }}
+                  className="glass-card p-6 text-center"
                 >
                   <h3 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
                     {stat.num}
                   </h3>
 
-                  <p className="text-[11px] sm:text-xs text-gray-500 mt-2 uppercase tracking-[0.2em]">
+                  <p className="text-xs text-gray-500 mt-2 uppercase tracking-[0.2em]">
                     {stat.label}
                   </p>
                 </motion.div>
               ))}
 
             </div>
-
           </ScrollReveal>
+
         </div>
 
       </div>
