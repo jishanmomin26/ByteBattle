@@ -1,31 +1,30 @@
 import { useState } from 'react'
-{faqs.map((item, i) => (
-  <div key={i}>
+import ScrollReveal from './ScrollReveal.jsx'
 
 const faqs = [
   {
-    q: 'Is ByteBattle free to participate?',
-    a: 'Yes, ByteBattle is completely free for all participants. ',
+    q: "Is ByteBattle free to participate?",
+    a: "Yes, ByteBattle is completely free for all participants.",
   },
   {
-    q: 'Can beginners participate?',
-    a: 'Absolutely! This hackathon is beginner-friendly.',
+    q: "Can beginners participate?",
+    a: "Absolutely! This hackathon is beginner-friendly.",
   },
   {
-    q: 'Is it a solo or team hackathon?',
-    a: 'It is a solo hackathon. You will participate individually.',
+    q: "Is it a solo or team hackathon?",
+    a: "It is a solo hackathon. You will participate individually.",
   },
   {
-    q: 'When will the problem statement be revealed?',
-    a: 'After registration closes.',
+    q: "When will the problem statement be revealed?",
+    a: "After registration closes.",
   },
   {
-    q: 'How do I submit my project?',
-    a: 'Submission details will be shared on hackathon day.',
+    q: "How do I submit my project?",
+    a: "Submission details will be shared on hackathon day.",
   },
   {
-    q: 'What technologies can I use?',
-    a: 'You are free to use any tech stack.',
+    q: "What technologies can I use?",
+    a: "You are free to use any tech stack.",
   },
 ]
 
@@ -35,11 +34,7 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="
-        relative
-        pt-20 pb-32
-        sm:pt-28 sm:pb-40
-      "
+      className="relative pt-20 pb-32 sm:pt-28 sm:pb-40"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
 
@@ -51,34 +46,22 @@ export default function FAQ() {
             </h2>
 
             <p className="text-gray-500 mt-3 text-[11px] sm:text-sm tracking-[0.25em] uppercase">
-              Got Questions? We’ve Got Answers
+              Got Questions? We've Got Answers
             </p>
           </div>
         </ScrollReveal>
 
-        {/* FAQ Container */}
-        <div className="max-w-3xl mx-auto space-y-3 sm:space-y-4">
+        {/* FAQ Items */}
+        <div className="max-w-3xl mx-auto space-y-4">
 
           {faqs.map((item, i) => (
             <ScrollReveal key={i} delay={i * 0.05}>
-              <div
-                className="
-                  border border-white/10
-                  rounded-xl
-                  overflow-hidden
-                  bg-white/[0.02]
-                "
-              >
+              <div className="border border-white/10 rounded-2xl overflow-hidden bg-white/[0.02]">
+
                 {/* Question */}
                 <button
                   onClick={() => setOpen(open === i ? null : i)}
-                  className="
-                    w-full
-                    flex items-center justify-between
-                    px-4 sm:px-6
-                    py-4 sm:py-5
-                    text-left
-                  "
+                  className="w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left"
                 >
                   <span className="text-sm sm:text-base text-white font-medium">
                     {item.q}
@@ -91,10 +74,11 @@ export default function FAQ() {
 
                 {/* Answer */}
                 {open === i && (
-                  <div className="px-4 sm:px-6 pb-4 sm:pb-5 text-sm text-gray-400 leading-relaxed">
+                  <div className="px-5 sm:px-6 pb-4 sm:pb-5 text-sm text-gray-400 leading-relaxed">
                     {item.a}
                   </div>
                 )}
+
               </div>
             </ScrollReveal>
           ))}
