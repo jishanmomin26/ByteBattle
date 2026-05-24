@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+
 import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
 import About from './components/About.jsx'
@@ -8,11 +9,11 @@ import Timeline from './components/Timeline.jsx'
 import Rewards from './components/Rewards.jsx'
 import WhyJoin from './components/WhyJoin.jsx'
 import FAQ from './components/FAQ.jsx'
-import CTA from './components/CTA.jsx'
 import Footer from './components/Footer.jsx'
 import ParticleBackground from './components/ParticleBackground.jsx'
 
-export const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeJOG14Wuvt-dzLNr0L5zxyjFR5Ju5sqpWqCOYTIQwvx2lqzg/viewform?usp=header'
+export const GOOGLE_FORM_URL =
+  'https://docs.google.com/forms/d/e/1FAIpQLSeJOG14Wuvt-dzLNr0L5zxyjFR5Ju5sqpWqCOYTIQwvx2lqzg/viewform?usp=header'
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -34,6 +35,7 @@ function App() {
           >
             <div className="flex flex-col items-center gap-6">
               <div className="loader-ring" />
+
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -64,25 +66,22 @@ function App() {
           {/* Navbar */}
           <Navbar />
 
-          <>
-  {/* HERO SECTION */}
-  <Hero />   {/* 👈 Ye missing tha */}
+          {/* Hero */}
+          <Hero />
 
-  {/* REST SECTIONS */}
-  <div className="flex flex-col gap-20 sm:gap-28">
-    <About />
-    <EventDetails />
-    <Timeline />
-    <Rewards />
-    <WhyJoin />
-    <FAQ />
-  </div>
-</>
-          
-          {/* Footer */}
+          {/* Sections */}
           <div className="flex flex-col gap-20 sm:gap-28">
+            <About />
+            <EventDetails />
+            <Timeline />
+            <Rewards />
+            <WhyJoin />
+            <FAQ />
+          </div>
+
+          {/* Footer */}
           <Footer />
-        </div>
+        </motion.div>
       )}
     </>
   )
