@@ -43,7 +43,7 @@ export default function Timeline() {
         <ScrollReveal>
           <div className="text-center mb-14 sm:mb-20">
             <h2 className="section-heading">
-              Registration Timeline
+              Registration & Hackathon Timeline
             </h2>
 
             <p className="text-gray-500 text-xs sm:text-sm tracking-[0.3em] uppercase mt-3">
