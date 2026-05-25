@@ -24,7 +24,7 @@ const steps = [
     active: false,
   },
   {
-    date: '1st June 2026 - 9:00 pm to 12:00 am',
+    date: '1st June 2026 - 9:00 am to 12:00 am',
     title: 'Hackathon Day!',
     description: '15 hours of intense coding, building, and innovating.',
     icon: '⚡',
