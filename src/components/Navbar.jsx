@@ -15,9 +15,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 40)
-    }
+    const onScroll = () => setScrolled(window.scrollY > 50)
 
     window.addEventListener('scroll', onScroll)
 
@@ -29,192 +27,170 @@ export default function Navbar() {
 
     setMobileOpen(false)
 
-    const element = document.querySelector(href)
-
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      })
-    }
+    document.querySelector(href)?.scrollIntoView({
+      behavior: 'smooth',
+    })
   }
 
   return (
-    <>
-      <motion.nav
-        initial={{ y: -80 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6 }}
-        className={`
-          fixed top-0 left-0 right-0 z-50
-          transition-all duration-300
-          ${
-            scrolled
-              ? 'bg-[#0a0a0a]/80 backdrop-blur-xl border-b border-white/10'
-              : 'bg-transparent'
-          }
-        `}
-      >
-        <div
-          className="
-            max-w-7xl mx-auto
-            px-4 sm:px-6 lg:px-8
-            h-[72px]
-            flex items-center justify-between
-          "
+    <motion.nav
+      initial={{ y: -80 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-[#0a0a0a]/80 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-purple-500/5'
+          : 'bg-transparent'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+
+        {/* Logo */}
+        <a
+          href="#hero"
+          onClick={(e) => handleClick(e, '#hero')}
+          className="flex items-center gap-2 group z-50"
         >
-
-          {/* Logo */}
-          <a
-            href="#hero"
-            onClick={(e) => handleClick(e, '#hero')}
-            className="flex items-center gap-3 z-50"
+          <div
+            className="
+              w-10 h-10
+              rounded-xl
+              bg-gradient-to-br
+              from-purple-500 to-blue-500
+              flex items-center justify-center
+              font-bold text-white text-sm
+            "
+            style={{ fontFamily: 'var(--font-poppins)' }}
           >
-            <div
-              className="
-                w-10 h-10
-                rounded-xl
-                bg-gradient-to-br
-                from-purple-500 to-blue-500
-                flex items-center justify-center
-                text-white font-bold
-              "
-            >
-              BB
-            </div>
-
-            <span
-              className="
-                text-2xl
-                font-bold
-                tracking-tight
-                text-white
-              "
-              style={{ fontFamily: 'var(--font-poppins)' }}
-            >
-              ByteBattle
-            </span>
-          </a>
-
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
-
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleClick(e, link.href)}
-                className="
-                  text-sm
-                  text-gray-400
-                  hover:text-white
-                  transition-colors
-                "
-              >
-                {link.label}
-              </a>
-            ))}
-
-            {/* Closed Button */}
-            <button
-              disabled
-              className="
-                px-6 py-3
-                rounded-xl
-                bg-gray-700/30
-                border border-white/10
-                text-gray-400
-                cursor-not-allowed
-                font-medium
-              "
-            >
-              Registrations Closed
-            </button>
-
+            BB
           </div>
 
-          {/* Mobile Hamburger */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
+          <span
             className="
-              md:hidden
-              relative
-              z-50
-              w-10 h-10
-              flex items-center justify-center
+              text-2xl
+              font-bold
+              tracking-tight
+              text-white
+              group-hover:text-purple-400
+              transition-colors
+            "
+            style={{ fontFamily: 'var(--font-poppins)' }}
+          >
+            ByteBattle
+          </span>
+        </a>
+
+        {/* Desktop Links */}
+        <div className="hidden md:flex items-center gap-8">
+
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={(e) => handleClick(e, link.href)}
+              className="
+                text-sm
+                text-gray-400
+                hover:text-white
+                transition-colors
+                relative group
+              "
+            >
+              {link.label}
+
+              <span
+                className="
+                  absolute -bottom-1 left-0
+                  w-0 h-0.5
+                  bg-gradient-to-r
+                  from-purple-500 to-blue-500
+                  group-hover:w-full
+                  transition-all duration-300
+                "
+              />
+            </a>
+          ))}
+
+          {/* Desktop Closed Button */}
+          <button
+            disabled
+            className="
+              px-6 py-3
+              rounded-xl
+              bg-gray-700/30
+              border border-white/10
+              text-gray-400
+              cursor-not-allowed
+              font-medium
             "
           >
-
-            <div className="relative w-7 h-7">
-
-              <motion.span
-                animate={
-                  mobileOpen
-                    ? { rotate: 45, y: 10 }
-                    : { rotate: 0, y: 0 }
-                }
-                className="
-                  absolute top-1
-                  w-7 h-0.5
-                  bg-white
-                  rounded-full
-                "
-              />
-
-              <motion.span
-                animate={
-                  mobileOpen
-                    ? { opacity: 0 }
-                    : { opacity: 1 }
-                }
-                className="
-                  absolute top-3
-                  w-7 h-0.5
-                  bg-white
-                  rounded-full
-                "
-              />
-
-              <motion.span
-                animate={
-                  mobileOpen
-                    ? { rotate: -45, y: -10 }
-                    : { rotate: 0, y: 0 }
-                }
-                className="
-                  absolute top-5
-                  w-7 h-0.5
-                  bg-white
-                  rounded-full
-                "
-              />
-
-            </div>
+            Registrations Closed
           </button>
+
         </div>
-      </motion.nav>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md:hidden z-50"
+        >
+          <div className="flex flex-col gap-1.5">
+
+            <motion.span
+              animate={
+                mobileOpen
+                  ? { rotate: 45, y: 8 }
+                  : { rotate: 0, y: 0 }
+              }
+              className="w-7 h-0.5 bg-white block"
+            />
+
+            <motion.span
+              animate={
+                mobileOpen
+                  ? { opacity: 0 }
+                  : { opacity: 1 }
+              }
+              className="w-7 h-0.5 bg-white block"
+            />
+
+            <motion.span
+              animate={
+                mobileOpen
+                  ? { rotate: -45, y: -8 }
+                  : { rotate: 0, y: 0 }
+              }
+              className="w-7 h-0.5 bg-white block"
+            />
+
+          </div>
+        </button>
+
+      </div>
 
       {/* Mobile Menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ duration: 0.35 }}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: '100vh' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
             className="
-              fixed inset-0 z-40
               md:hidden
-              bg-[#050505]/98
+              bg-[#0a0a0a]/98
               backdrop-blur-2xl
+              overflow-hidden
             "
           >
 
             <div
               className="
-                pt-28
                 px-6
+                pt-28
+                pb-10
                 flex flex-col
+                gap-2
               "
             >
 
@@ -224,11 +200,11 @@ export default function Navbar() {
                   href={link.href}
                   onClick={(e) => handleClick(e, link.href)}
                   className="
-                    text-4xl
+                    text-2xl
                     text-gray-200
-                    py-6
+                    py-4
                     border-b border-white/5
-                    active:text-purple-400
+                    hover:text-purple-400
                     transition-colors
                   "
                   style={{
@@ -243,14 +219,13 @@ export default function Navbar() {
               <button
                 disabled
                 className="
-                  mt-10
+                  mt-6
                   w-full
-                  py-5
-                  rounded-3xl
+                  py-4
+                  rounded-2xl
                   bg-gray-700/30
                   border border-white/10
                   text-gray-400
-                  text-lg
                   font-semibold
                   cursor-not-allowed
                 "
@@ -259,9 +234,10 @@ export default function Navbar() {
               </button>
 
             </div>
+
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </motion.nav>
   )
 }
