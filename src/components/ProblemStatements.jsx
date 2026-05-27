@@ -31,7 +31,7 @@ const problemStatements = [
     accentColor: 'border-cyan-400/20',
   },
   {
-    title: 'Daily Life Problem Solvers',
+    title: 'Everyday Innovation & Problem Solving',
     description: 'Solve real-world everyday problems using technology and innovation.',
     tags: ['Convenience', 'Automation', 'Productivity', 'Everyday efficiency', 'Real-world usability'],
     gradient: 'from-purple-400 to-indigo-500',
