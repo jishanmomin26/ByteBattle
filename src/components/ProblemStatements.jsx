@@ -147,50 +147,44 @@ export default function ProblemStatements() {
                   </p>
 
                   {/* Focus Areas Label */}
-                  <div className="pt-2">
-                    <p className="text-xs uppercase tracking-wider text-gray-500 mb-3 font-semibold">
-                      Focus Areas
-                    </p>
+<div className="pt-3 mt-auto">
+  <p className="text-xs uppercase tracking-[0.25em] text-gray-500 mb-4 font-semibold">
+    Focus Areas
+  </p>
 
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-2">
-                      {problem.tags.map((tag, tagIdx) => (
-                        <motion.span
-                          key={tagIdx}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          viewport={{ once: true, margin: '-50px' }}
-                          transition={{
-                            duration: 0.3,
-                            delay: 0.1 + tagIdx * 0.05,
-                          }}
-                          className={`
-                            px-3
-                            py-1.5
-                            rounded-full
-                            text-[11px]
-                            sm:text-xs
-                            font-medium
-                            bg-gradient-to-r ${problem.gradient}
-                            bg-opacity-10
-                            border border-white/10
-                            text-gray-200
-                            backdrop-blur-sm
-                            transition-all
-                            duration-300
-                            hover:border-white/20
-                            hover:bg-opacity-20
-                          `}
-                        >
-                          {tag}
-                        </motion.span>
-                      ))}
-                    </div>
-                  </div>
+  {/* Tags */}
+  <div className="flex flex-wrap gap-2 sm:gap-3">
 
-                </div>
+    {problem.tags.map((tag, tagIdx) => (
+      <motion.span
+        key={tagIdx}
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, margin: '-50px' }}
+        transition={{
+          duration: 0.3,
+          delay: 0.1 + tagIdx * 0.05,
+        }}
+        className={`
+          px-3 sm:px-4
+          py-2
+          rounded-full
+          text-[11px] sm:text-xs
+          font-medium
+          text-white
+          bg-gradient-to-r ${problem.gradient}
+          border border-white/10
+          backdrop-blur-md
+          whitespace-nowrap
+          shadow-lg
+        `}
+      >
+        {tag}
+      </motion.span>
+    ))}
 
-              </motion.div>
+  </div>
+</div>
 
             </ScrollReveal>
           ))}
