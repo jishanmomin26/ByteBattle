@@ -4,7 +4,7 @@ import ScrollReveal from './ScrollReveal.jsx'
 const problemStatements = [
   {
     title: 'Smart Community Solutions',
-    description: 'Build solutions that improve communities, public services, and social impact.',
+    description: 'Build innovative solutions that improve the quality of life in communities and create positive social impact. Participants can develop platforms that enhance communication between citizens and authorities, improve public accessibility, increase safety awareness, or solve local community challenges using technology. Ideas may include smart city applications, emergency support systems, awareness platforms, complaint management systems, or community engagement tools. The goal is to use innovation to make communities smarter, safer, more connected, and more efficient for everyone.',
     tags: ['Social impact', 'Smart governance', 'Public accessibility', 'Community engagement', 'Safety & awareness'],
     gradient: 'from-green-400 to-emerald-500',
     accentColor: 'border-green-400/20',
