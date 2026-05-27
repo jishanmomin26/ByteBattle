@@ -166,18 +166,23 @@ export default function ProblemStatements() {
           delay: 0.1 + tagIdx * 0.05,
         }}
         className={`
-          px-3 sm:px-4
-          py-2
-          rounded-full
-          text-[11px] sm:text-xs
-          font-medium
-          text-white
-          bg-gradient-to-r ${problem.gradient}
-          border border-white/10
-          backdrop-blur-md
-          whitespace-nowrap
-          shadow-lg
-        `}
+  px-3
+  py-1.5
+  rounded-full
+  text-[11px]
+  sm:text-xs
+  font-medium
+  bg-gradient-to-r ${problem.gradient}
+  bg-opacity-10
+  border border-white/10
+  text-gray-200
+  backdrop-blur-sm
+  transition-all
+  duration-300
+  hover:border-white/20
+  hover:bg-opacity-20
+  whitespace-nowrap
+`}
       >
         {tag}
       </motion.span>
