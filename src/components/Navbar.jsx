@@ -62,14 +62,22 @@ export default function Navbar() {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 group-hover:w-full transition-all duration-300" />
             </a>
           ))}
-          <a
-            href={GOOGLE_FORM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="glow-btn !py-2.5 !px-6 !text-sm"
-          >
-            Register
-          </a>
+          {/* Desktop Register Button */}
+<button
+  disabled
+  className="
+    !py-2.5 !px-6 !text-sm
+    rounded-xl
+    bg-gray-700/30
+    border border-white/10
+    text-gray-400
+    cursor-not-allowed
+    backdrop-blur-md
+    font-medium
+  "
+>
+  Registrations Closed
+</button>
         </div>
 
         {/* Mobile Hamburger */}
@@ -104,14 +112,23 @@ export default function Navbar() {
                   {link.label}
                 </a>
               ))}
-              <a
-                href={GOOGLE_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glow-btn text-center mt-2"
-              >
-                Register Now
-              </a>
+              {/* Mobile Closed Button */}
+<button
+  disabled
+  className="
+    text-center mt-2
+    rounded-2xl
+    py-4 px-6
+    bg-gray-700/30
+    border border-white/10
+    text-gray-400
+    cursor-not-allowed
+    backdrop-blur-md
+    font-semibold
+  "
+>
+  Registrations Closed
+</button>
             </div>
           </motion.div>
         )}
