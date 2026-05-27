@@ -13,7 +13,7 @@ const problemStatements = [
     title: 'Education & Student Life Innovation',
     description: 'Create technology-driven solutions that improve education, learning experiences, and student life. Participants can focus on EdTech platforms, productivity tools, skill development systems, career guidance platforms, or student wellness applications. Solutions may help students manage studies, improve learning efficiency, prepare for careers, or reduce academic stress. The aim is to make education more accessible, interactive, engaging, and beneficial for students of all backgrounds while solving real challenges faced in academic life.',
     tags: ['EdTech', 'Productivity', 'Career growth', 'Skill development', 'Student wellness'],
-    gradient: 'from-yellow-400 to-orange-500',
+    gradient: 'from-yellow-500 to-orange-500',
     accentColor: 'border-yellow-400/20',
   },
   {
