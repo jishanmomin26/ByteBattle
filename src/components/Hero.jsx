@@ -56,8 +56,8 @@ return (
       transition={{ duration: 0.6 }}  
       className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8"  
     >  
-      <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />  
-      <span className="text-xs sm:text-sm text-gray-400">Registration Closed</span>  
+      <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />  
+      <span className="text-xs sm:text-sm text-gray-400">Registration are Closed</span>  
     </motion.div>  
 
     {/* Title */}  
