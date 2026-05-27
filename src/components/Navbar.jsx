@@ -169,75 +169,71 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: '100vh' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
+<AnimatePresence>
+  {mobileOpen && (
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.25 }}
+      className="
+        md:hidden
+        absolute
+        top-full
+        left-0
+        w-full
+        bg-[#0a0a0a]/95
+        backdrop-blur-xl
+        border-t border-white/5
+        overflow-hidden
+      "
+    >
+      <div className="px-5 py-5 flex flex-col gap-1">
+
+        {navLinks.map((link) => (
+          <a
+            key={link.href}
+            href={link.href}
+            onClick={(e) => handleClick(e, link.href)}
             className="
-              md:hidden
-              bg-[#0a0a0a]/98
-              backdrop-blur-2xl
-              overflow-hidden
+              text-gray-300
+              hover:text-white
+              py-3
+              text-lg
+              border-b border-white/5
+              transition-colors
             "
+            style={{
+              fontFamily: 'var(--font-poppins)',
+            }}
           >
+            {link.label}
+          </a>
+        ))}
 
-            <div
-              className="
-                px-6
-                pt-28
-                pb-10
-                flex flex-col
-                gap-2
-              "
-            >
+        {/* Closed Button */}
+        <button
+          disabled
+          className="
+            mt-4
+            w-full
+            rounded-2xl
+            py-3
+            bg-gray-700/30
+            border border-white/10
+            text-gray-400
+            font-semibold
+            cursor-not-allowed
+            backdrop-blur-md
+          "
+        >
+          Registrations Closed
+        </button>
 
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={(e) => handleClick(e, link.href)}
-                  className="
-                    text-2xl
-                    text-gray-200
-                    py-4
-                    border-b border-white/5
-                    hover:text-purple-400
-                    transition-colors
-                  "
-                  style={{
-                    fontFamily: 'var(--font-poppins)',
-                  }}
-                >
-                  {link.label}
-                </a>
-              ))}
-
-              {/* Mobile Closed Button */}
-              <button
-                disabled
-                className="
-                  mt-6
-                  w-full
-                  py-4
-                  rounded-2xl
-                  bg-gray-700/30
-                  border border-white/10
-                  text-gray-400
-                  font-semibold
-                  cursor-not-allowed
-                "
-              >
-                Registrations Closed
-              </button>
-
-            </div>
-
-          </motion.div>
-        )}
-      </AnimatePresence>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
     </motion.nav>
   )
 }
