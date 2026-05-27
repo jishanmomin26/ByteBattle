@@ -153,42 +153,36 @@ export default function ProblemStatements() {
   </p>
 
   {/* Tags */}
-  <div className="flex flex-wrap gap-2 sm:gap-3">
-
-    {problem.tags.map((tag, tagIdx) => (
-      <motion.span
-        key={tagIdx}
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true, margin: '-50px' }}
-        transition={{
-          duration: 0.3,
-          delay: 0.1 + tagIdx * 0.05,
-        }}
-        className={`
-  px-3
-  py-1.5
-  rounded-full
-  text-[11px]
-  sm:text-xs
-  font-medium
-  bg-gradient-to-r ${problem.gradient}
-  bg-opacity-10
-  border border-white/10
-  text-gray-200
-  backdrop-blur-sm
-  transition-all
-  duration-300
-  hover:border-white/20
-  hover:bg-opacity-20
-  whitespace-nowrap
-`}
-      >
-        {tag}
-      </motion.span>
-    ))}
-
-  </div>
+  <div className="flex flex-wrap gap-2 overflow-visible">
+  {problem.tags.map((tag, tagIdx) => (
+    <motion.span
+      key={tagIdx}
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, margin: '-50px' }}
+      transition={{
+        duration: 0.3,
+        delay: 0.1 + tagIdx * 0.05,
+      }}
+      className={`
+        px-3
+        py-1.5
+        rounded-full
+        text-[10px]
+        sm:text-xs
+        font-medium
+        bg-gradient-to-r
+        ${problem.gradient}
+        border
+        border-white/10
+        text-white
+        backdrop-blur-sm
+        whitespace-nowrap
+      `}
+    >
+      {tag}
+    </motion.span>
+  ))}
 </div>
 
             </ScrollReveal>
