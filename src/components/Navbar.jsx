@@ -1,54 +1,53 @@
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Details', href: '#details' },
-  { label: 'Timeline', href: '#timeline' },
-  { label: 'Rewards', href: '#rewards' },
-  { label: 'Problem Statements', href: '#problem-statements' },
-  { label: 'FAQ', href: '#faq' },
-]
+  { label: "About", href: "#about" },
+  { label: "Details", href: "#details" },
+  { label: "Timeline", href: "#timeline" },
+  { label: "Rewards", href: "#rewards" },
+  { label: "Problem Statements", href: "#problem-statements" },
+  { label: "FAQ", href: "#faq" },
+];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [mobileOpen, setMobileOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50)
+    const onScroll = () => setScrolled(window.scrollY > 50);
 
-    window.addEventListener('scroll', onScroll)
+    window.addEventListener("scroll", onScroll);
 
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const handleClick = (e, href) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    setMobileOpen(false)
+    setMobileOpen(false);
 
     document.querySelector(href)?.scrollIntoView({
-      behavior: 'smooth',
-    })
-  }
+      behavior: "smooth",
+    });
+  };
 
   return (
     <motion.nav
       initial={{ y: -80 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#0a0a0a]/80 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-purple-500/5'
-          : 'bg-transparent'
+          ? "bg-[#0a0a0a]/80 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-purple-500/5"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-
         {/* Logo */}
         <a
           href="#hero"
-          onClick={(e) => handleClick(e, '#hero')}
+          onClick={(e) => handleClick(e, "#hero")}
           className="flex items-center gap-2 group z-50"
         >
           <div
@@ -60,7 +59,7 @@ export default function Navbar() {
               flex items-center justify-center
               font-bold text-white text-sm
             "
-            style={{ fontFamily: 'var(--font-poppins)' }}
+            style={{ fontFamily: "var(--font-poppins)" }}
           >
             BB
           </div>
@@ -74,7 +73,7 @@ export default function Navbar() {
               group-hover:text-purple-400
               transition-colors
             "
-            style={{ fontFamily: 'var(--font-poppins)' }}
+            style={{ fontFamily: "var(--font-poppins)" }}
           >
             ByteBattle
           </span>
@@ -82,7 +81,6 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
-
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -110,23 +108,25 @@ export default function Navbar() {
               />
             </a>
           ))}
-
-          {/* Desktop Closed Button */}
-          <button
-            disabled
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSekT9nmU7-kgyN3W-I9bslcCfUGntzOOv1hfwQeKS8Q9EIdMg/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
             className="
-              px-6 py-3
-              rounded-xl
-              bg-gray-700/30
-              border border-white/10
-              text-gray-400
-              cursor-not-allowed
-              font-medium
-            "
+    px-6 py-3
+    rounded-xl
+    bg-gradient-to-r
+    from-purple-500
+    to-blue-500
+    text-white
+    font-medium
+    hover:scale-105
+    transition-all
+    duration-300
+  "
           >
-            Registrations Closed
-          </button>
-
+            Submit Project
+          </a>{" "}
         </div>
 
         {/* Mobile Menu Button */}
@@ -135,37 +135,24 @@ export default function Navbar() {
           className="md:hidden z-50"
         >
           <div className="flex flex-col gap-1.5">
+            <motion.span
+              animate={mobileOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
+              className="w-7 h-0.5 bg-white block"
+            />
 
             <motion.span
-              animate={
-                mobileOpen
-                  ? { rotate: 45, y: 8 }
-                  : { rotate: 0, y: 0 }
-              }
+              animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
               className="w-7 h-0.5 bg-white block"
             />
 
             <motion.span
               animate={
-                mobileOpen
-                  ? { opacity: 0 }
-                  : { opacity: 1 }
+                mobileOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }
               }
               className="w-7 h-0.5 bg-white block"
             />
-
-            <motion.span
-              animate={
-                mobileOpen
-                  ? { rotate: -45, y: -8 }
-                  : { rotate: 0, y: 0 }
-              }
-              className="w-7 h-0.5 bg-white block"
-            />
-
           </div>
         </button>
-
       </div>
 
       {/* Mobile Menu */}
@@ -173,7 +160,7 @@ export default function Navbar() {
         {mobileOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: '100vh' }}
+            animate={{ opacity: 1, height: "100vh" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
             className="
@@ -183,7 +170,6 @@ export default function Navbar() {
               overflow-hidden
             "
           >
-
             <div
               className="
                 px-6
@@ -193,7 +179,6 @@ export default function Navbar() {
                 gap-2
               "
             >
-
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -208,36 +193,41 @@ export default function Navbar() {
                     transition-colors
                   "
                   style={{
-                    fontFamily: 'var(--font-poppins)',
+                    fontFamily: "var(--font-poppins)",
                   }}
                 >
                   {link.label}
                 </a>
               ))}
 
-              {/* Mobile Closed Button */}
-              <button
-                disabled
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSekT9nmU7-kgyN3W-I9bslcCfUGntzOOv1hfwQeKS8Q9EIdMg/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
                 className="
-                  mt-6
-                  w-full
-                  py-4
-                  rounded-2xl
-                  bg-gray-700/30
-                  border border-white/10
-                  text-gray-400
-                  font-semibold
-                  cursor-not-allowed
-                "
+    mt-6
+    w-full
+    py-4
+    rounded-2xl
+    bg-gradient-to-r
+    from-purple-500
+    to-blue-500
+    text-white
+    font-semibold
+    text-center
+    block
+    hover:scale-[1.02]
+    transition-all
+    duration-300
+  "
               >
-                Registrations Closed
-              </button>
-
+                Submit Project
+              </a>
             </div>
-
           </motion.div>
         )}
       </AnimatePresence>
     </motion.nav>
-  )
+  );
 }

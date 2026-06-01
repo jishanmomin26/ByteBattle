@@ -12,6 +12,7 @@ import ProblemStatements from './components/ProblemStatements.jsx'
 import FAQ from './components/FAQ.jsx'
 import Footer from './components/Footer.jsx'
 import ParticleBackground from './components/ParticleBackground.jsx'
+import SubmitProject from "./components/SubmitProject";
 
 export const GOOGLE_FORM_URL =
   'https://docs.google.com/forms/d/e/1FAIpQLSeJOG14Wuvt-dzLNr0L5zxyjFR5Ju5sqpWqCOYTIQwvx2lqzg/viewform?usp=header'
@@ -78,6 +79,7 @@ function App() {
             <Rewards />
             <WhyJoin />
             <ProblemStatements />
+            <SubmitProject />
             <FAQ />
           </div>
 
