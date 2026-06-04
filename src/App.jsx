@@ -9,8 +9,8 @@ import Timeline from './components/Timeline.jsx'
 import Rewards from './components/Rewards.jsx'
 import WhyJoin from './components/WhyJoin.jsx'
 import ProblemStatements from './components/ProblemStatements.jsx'
-import TopParticipants from "./components/TopParticipants";
-import Winners from "./components/Winners";
+import TopParticipants from "./components/TopParticipants.jsx";
+import Winners from "./components/Winners.jsx";
 import FAQ from './components/FAQ.jsx'
 import Footer from './components/Footer.jsx'
 import ParticleBackground from './components/ParticleBackground.jsx'
@@ -82,7 +82,6 @@ function App() {
             <WhyJoin />
             <ProblemStatements />
             <SubmitProject />
-
             <TopParticipants />
             <Winners />
             <FAQ />
