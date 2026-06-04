@@ -89,3 +89,12 @@ export default function TopParticipants() {
     </section>
   );
 }
+const TopParticipants = () => {
+  return (
+    <div>
+      Top Participants
+    </div>
+  );
+};
+
+export default TopParticipants;
