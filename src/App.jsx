@@ -82,6 +82,7 @@ function App() {
             <WhyJoin />
             <ProblemStatements />
             <SubmitProject />
+
             <TopParticipants />
             <Winners />
             <FAQ />
