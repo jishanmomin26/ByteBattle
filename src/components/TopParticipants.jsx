@@ -89,4 +89,3 @@ export default function TopParticipants() {
     </section>
   );
 }
-export default TopParticipants;
