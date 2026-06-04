@@ -2,13 +2,41 @@ import { motion } from "framer-motion";
 import { Trophy } from "lucide-react";
 
 const participants = [
-  { rank: 1, name: "Khan Shadab Tabarak", team: "Matrix" },
-  { rank: 2, name: "Ubaid Qureshi", team: "SparkTech" },
-  { rank: 3, name: "Shaikh Mohd Siddique", team: "Deikaiju" },
-  { rank: 4, name: "Mohammed Taha Farooqui", team: "Game of Codes" },
-  { rank: 5, name: "Khan Moinuddin Jamal Ahmed", team: "VCare Labs" },
-  { rank: 6, name: "Ansari Sarah Mohd Hamid", team: "Logic Loop" },
-  { rank: 7, name: "Owais Ashfaque Shaikh", team: "Faaaaah!!" },
+  {
+    rank: 1,
+    name: "Khan Shadab Tabarak",
+    team: "Matrix",
+  },
+  {
+    rank: 2,
+    name: "Ubaid Qureshi",
+    team: "SparkTech",
+  },
+  {
+    rank: 3,
+    name: "Shaikh Mohd Siddique",
+    team: "Deikaiju",
+  },
+  {
+    rank: 4,
+    name: "Mohammed Taha Farooqui",
+    team: "Game of Codes",
+  },
+  {
+    rank: 5,
+    name: "Khan Moinuddin Jamal Ahmed",
+    team: "VCare Labs",
+  },
+  {
+    rank: 6,
+    name: "Ansari Sarah Mohd Hamid",
+    team: "Logic Loop",
+  },
+  {
+    rank: 7,
+    name: "Owais Ashfaque Shaikh",
+    team: "Faaaaah!!",
+  },
 ];
 
 export default function TopParticipants() {
