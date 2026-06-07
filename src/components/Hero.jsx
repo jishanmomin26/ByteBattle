@@ -57,8 +57,16 @@ return (
       className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8"  
     >  
       <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />  
-      <span className="text-xs sm:text-sm text-gray-400">Registration are Closed</span>  
+      <span className="text-xs sm:text-sm text-gray-400">ByteBattle 2026 Successfully Concluded</span>  
     </motion.div>  
+
+    <p className="text-sm md:text-base text-gray-400 uppercase tracking-[0.3em] mb-3">
+  Anjuman-I-Islam's Kalsekar Technical Campus
+</p>
+
+<p className="text-xs md:text-sm text-purple-300 mb-6">
+  Department of Computer Engineering
+</p>
 
     {/* Title */}  
     <motion.h1  
@@ -95,24 +103,18 @@ return (
       transition={{ duration: 0.6, delay: 0.45 }}  
       className="text-base sm:text-xl text-gray-300 mb-12 font-light"  
     >  
-      15-Hour Online Solo Hackathon  
+      15-Hour Online Solo Hackathon • Successfully Concluded  
     </motion.p>  
 
-    {/* Countdown */}  
-    <motion.div  
-      initial={{ opacity: 0, scale: 0.9 }}  
-      animate={{ opacity: 1, scale: 1 }}  
-      transition={{ duration: 0.6, delay: 0.6 }}  
-      className="flex justify-center gap-3 sm:gap-5 mb-12"  
-    >  
-      <CountdownUnit value={countdown.days} label="Days" />  
-      <div className="flex items-center text-2xl text-purple-500/50 font-light">:</div>  
-      <CountdownUnit value={countdown.hours} label="Hours" />  
-      <div className="flex items-center text-2xl text-purple-500/50 font-light">:</div>  
-      <CountdownUnit value={countdown.minutes} label="Mins" />  
-      <div className="flex items-center text-2xl text-purple-500/50 font-light">:</div>  
-      <CountdownUnit value={countdown.seconds} label="Secs" />  
-    </motion.div>  
+    <div className="glass-card px-8 py-5 inline-block">
+  <h3 className="text-2xl font-bold text-purple-300">
+    Event Concluded
+  </h3>
+
+  <p className="text-gray-400 mt-2">
+    Thank you to all participants for making ByteBattle 2026 a success.
+  </p>
+</div>
 
     {/* Closed CTA */}
 <motion.div
