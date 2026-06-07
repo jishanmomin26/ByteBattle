@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Trophy } from "lucide-react";
 
 const participants = [
   {
@@ -80,7 +79,9 @@ export default function TopParticipants() {
                   </p>
                 </div>
 
-                <Trophy className="ml-auto text-yellow-400" size={28} />
+                <div className="ml-auto text-2xl">
+  🏆
+</div>
               </div>
             </motion.div>
           ))}
