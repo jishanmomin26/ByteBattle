@@ -108,25 +108,6 @@ export default function Navbar() {
               />
             </a>
           ))}
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSekT9nmU7-kgyN3W-I9bslcCfUGntzOOv1hfwQeKS8Q9EIdMg/viewform"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="
-    px-6 py-3
-    rounded-xl
-    bg-gradient-to-r
-    from-purple-500
-    to-blue-500
-    text-white
-    font-medium
-    hover:scale-105
-    transition-all
-    duration-300
-  "
-          >
-            Submit Project
-          </a>{" "}
         </div>
 
         {/* Mobile Menu Button */}
@@ -199,31 +180,6 @@ export default function Navbar() {
                   {link.label}
                 </a>
               ))}
-
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSekT9nmU7-kgyN3W-I9bslcCfUGntzOOv1hfwQeKS8Q9EIdMg/viewform"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setMobileOpen(false)}
-                className="
-    mt-6
-    w-full
-    py-4
-    rounded-2xl
-    bg-gradient-to-r
-    from-purple-500
-    to-blue-500
-    text-white
-    font-semibold
-    text-center
-    block
-    hover:scale-[1.02]
-    transition-all
-    duration-300
-  "
-              >
-                Submit Project
-              </a>
             </div>
           </motion.div>
         )}
